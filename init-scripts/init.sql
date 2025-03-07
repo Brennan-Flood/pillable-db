@@ -1,9 +1,8 @@
-DROP TABLE IF EXISTS users CASCADE;
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
-    name TEXT NOT NULL UNIQUE
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    name TEXT NOT NULL
 );
-
 
 INSERT INTO users (name) VALUES ('Brennan'), ('Han');
