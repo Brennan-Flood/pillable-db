@@ -1,4 +1,5 @@
-\i '/docker-entrypoint-initdb.d/init.sql'
+\i '/docker-entrypoint-initdb.d/01_init_schema.sql'
+\i '/docker-entrypoint-initdb.d/02_init_data.sql'
 \i '/docker-entrypoint-initdb.d/functions/add_user.sql'
 \i '/docker-entrypoint-initdb.d/functions/get_users.sql'
 \i '/docker-entrypoint-initdb.d/functions/delete_user.sql'
