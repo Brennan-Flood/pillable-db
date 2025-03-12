@@ -1,10 +1,3 @@
-DO $$ 
-BEGIN
-    IF NOT EXISTS (SELECT FROM pg_database WHERE datname = 'test_db') THEN
-        CREATE DATABASE test_db WITH OWNER postgres;
-    END IF;
-END $$;
-
 CREATE TABLE IF NOT EXISTS users (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     name TEXT NOT NULL,
@@ -38,3 +31,4 @@ CREATE TABLE IF NOT EXISTS reviews (
     rating INTEGER NOT NULL CHECK (rating BETWEEN 1 AND 5),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
